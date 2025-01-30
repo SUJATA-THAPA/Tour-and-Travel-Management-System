@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive travel website design tutorial</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- custom js file link  -->
+    <script src="js/script.js" defer></script>
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"> <i class="fas fa-paper-plane"></i>travel </a>
+
+    <nav class="navbar">
+        <a data-aos="zoom-in-left" data-aos-delay="300" href="index.html">home</a>
+        <a data-aos="zoom-in-left" data-aos-delay="450" href="login.html">Login</a>
+        <a data-aos="zoom-in-left" data-aos-delay="600" href="destination.html">destination</a>
+        <a data-aos="zoom-in-left" data-aos-delay="750" href="services.html">services</a>
+       
+        
+    </nav>
+
+    <a data-aos="zoom-in-left" data-aos-delay="1300" href="#book-form" class="btn">book now</a>
+
+</header>
+
+<!-- header section ends -->
+
+ <section class="destination" id="destination">
+
+    <div class="heading">
+        <span>our destination</span>
+       
+    </div>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            
+            <form id="tour-booking-form" style="max-width: 500px; margin: auto; background-color: #f2f2f2; padding: 20px; border-radius: 10px;">
+  <div style="margin-bottom: 10px;">
+    <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px;">Name:</label>
+    <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;">
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <label for="destination" style="display: block; font-weight: bold; margin-bottom: 5px;">Destination:</label>
+    <select id="destination" name="destination" required style="width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;">
+      <option value="">--Select Destination--</option>
+      <option value="1">Sukute Beach</option>
+      <option value="2">Kushma</option>
+      <option value="3">Mustang</option>
+      <option value="4">Pokhara</option>
+      <option value="5">Pashupatinath</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <label for="tour_dates">Tour Dates:</label>
+    <div class="input-daterange input-group" id="tour_dates">
+      <input type="date" class="form-control" name="start_date" required>
+      <span class="input-group-addon">to</span>
+      <input type="date" class="form-control" name="end_date" required>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <label for="travellers" style="display: block; font-weight: bold; margin-bottom: 5px;">Number of Travellers:</label>
+    <input type="number" id="travellers" name="travellers" required style="width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;">
+  </div>
+
+  <div>
+    <input type="submit" id="submit" name="submit" value="Submit" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById('tour-booking-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const travellersInput = document.getElementById('travellers');
+    const travellers = parseInt(travellersInput.value);
+    if (travellers <= 0 || isNaN(travellers)) {
+      alert('Number of travellers must be a positive integer.');
+    } else {
+      alert('Thank you for booking. You will receive confirmation call and email from our admin team soon.');
+      form.reset();
+    }
+  });
+</script>
+
+
+
+
+<!-- This does not reset data only shows alert <script>
+  // Get a reference to the form element
+  var form = document.getElementById('registration-form');
+
+  // Add an event listener for the form submission
+  form.addEventListener('submit', function(event) {
+    // Prevent the form submission from reloading the page
+    event.preventDefault();
+    
+    // Display the confirmation message
+    alert("Thank you for registering. You will receive confirmation soon via email.");
+  });
+
+ 
+</script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<!-- Initialize Datepicker -->
+<script>
+  $(document).ready(function() {
+    $('.input-daterange').datepicker({
+      autoclose: true,
+      format: 'yyyy-mm-dd'
+    });
+  });
+</script>
+<script>
+function validateForm() {
+  // Validate the name field
+  var name = document.getElementById("name").value;
+  if (name == "") {
+    alert("Please enter your name.");
+    return false;
+  }
+
+  // Validate the number of travellers field
+  var number_of_travellers = document.getElementById("number_of_travellers").value;
+  if (number_of_travellers <= 0) {
+    alert("Please enter a positive number of travellers.");
+    return false;
+  }
+
+  // All validation passed, submit the form
+  return true;
+}
+</script>
+
+<br>
+<br>
+
+
+
+
+
+
+
+  // Add an event listener to the form
+
+                
+           
+        </div>
+
+       
+
+        
+
+        
+
+    </div>
+
+</section>
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <a href="#" class="logo"> <i class="fas fa-paper-plane"></i>travel </a>
+            <p>Your dream vacation starts here</p>
+            
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+            <h3>quick links</h3>
+            <a href="index.html" class="links"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#about" class="links"> <i class="fas fa-arrow-right"></i> login </a>
+            <a href="destination.html" class="links"> <i class="fas fa-arrow-right"></i> destination </a>
+            <a href="services.html" class="links"> <i class="fas fa-arrow-right"></i> services </a>
+            
+            
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+            <h3>contact info</h3>
+            <p> <i class="fas fa-map"></i> Kathmandu,Nepal </p>
+            <p> <i class="fas fa-phone"></i> +977986734634 </p>
+            <p> <i class="fas fa-envelope"></i> sumann@gmail.com </p>
+            <p> <i class="fas fa-clock"></i> 7:00am - 10:00pm </p>
+        </div>
+
+        
+
+    </div>
+
+</section>
+
+<div class="credit">created by <span>Team Suman and Sujata</span> | all rights reserved!</div>
+
+<!-- footer section ends -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+
+    AOS.init({
+        duration: 800,
+        offset:150,
+    });
+
+</script>
+
+
+</body>
+</html>
